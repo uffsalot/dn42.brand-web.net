@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if($isvalid){
         $subject = "New Peering request from $name";
-        $message = "Name: $name \r\nASN: $asn \r\nWireguard key: $wgkey \r\nWireguard endpoint: $wgendpoint \r\nBandwidth: $bandwidth \r\nIPv4 BGP Endpoint: $bgpipv4 \r\nIPv6 BGP Endpoint: $bgpipv6 \r\nAdditional Info: $addinfo";
+        $message = "Name: $name \r\nASN: $asn \r\nWireguard key: $wgkey \r\nWireguard endpoint: $wgendpoint \r\nBandwidth: $bandwidth \r\nIPv4 BGP Endpoint: $bgpipv4 \r\nIPv6 BGP Endpoint: $bgpipv6 \r\nAdditional Info: $addinfo \r\n\r\n Ansible: --extra-vars='name=$name asn=$asn wgkey=$wgkey wgendpoint=$wgendpoint bgpipv4=$bgpipv4 bgpipv6=$bgpipv6 bandwidth=$bandwidth'";
         $header =   'Reply-To: '.$mail . "\r\n" .
                     'X-Mailer: PHP/' . phpversion();
         mail("dn42@brand-web.net", $subject, $message, $header);
