@@ -8,7 +8,7 @@
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
                         <h4 class="alert-heading">Warning!</h4>
 			<p class="mb-0">Error! Please check your input.</p>';
-			if(empty($bgpipv4) && empty($bgpipv6)) { echo '<p class="mb-0">Atleast one BGP peer has to be defined.</p>';}
+			if(empty($bgpipv4) && empty($bgpipv6)) { echo '<p class="mb-0">At least one BGP peer must be specified.</p>';}
                     echo '</div>';}
             if ($_SERVER['REQUEST_METHOD'] == 'POST' && $isvalid == TRUE) {
               echo '<div class="alert alert-dismissible alert-success">
