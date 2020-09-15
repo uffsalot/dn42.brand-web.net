@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $isvalid = FALSE;
     }
     #Validate Ipv6 Endpoint
-    if (isValidIPv4($bgpipv6) == FALSE && !empty($bgpipv6)){
+    if (isValidIPv6($bgpipv6) == FALSE && !empty($bgpipv6)){
         $isvalid = FALSE;
     }
 
