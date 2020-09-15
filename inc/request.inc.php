@@ -36,12 +36,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isValidEMail($mail) == FALSE){
         $isvalid = FALSE;
     }
+    #Validate if atleast one BGP Peer is definied
+    if (empty($bgpipv4) && empty($bgpipv6)){
+        $isvalid = FALSE;
+    }
     #Validate Ipv4 Endpoint
-    if (isValidIPv4($bgpipv4) == FALSE){
+    if (isValidIPv4($bgpipv4) == FALSE && !empty($bgpipv4)){
         $isvalid = FALSE;
     }
     #Validate Ipv6 Endpoint
-    if (isValidIPv6($bgpipv6) == FALSE){
+    if (isValidIPv4($bgpipv6) == FALSE && !empty($bgpipv6)){
         $isvalid = FALSE;
     }
 

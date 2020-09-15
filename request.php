@@ -70,14 +70,14 @@
                 <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                  <label class="col-form-label">IPv4 BGP Endpoint</label>
-                                  <input type="text" <?php if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isValidIPv4($bgpipv4)) {echo 'class="form-control is-invalid"';}else{echo 'class="form-control"';}?> placeholder="172.20.191.191" id="bgpipv4" name="bgpipv4" value="<?php echo $bgpipv4;?>" required>
+				  <label class="col-form-label">IPv4 BGP Endpoint</label>
+                                  <input type="text" <?php if (($_SERVER['REQUEST_METHOD'] == 'POST') && (!isValidIPv4($bgpipv4) && !empty($bgpipv4))) {echo 'class="form-control is-invalid"';}else{echo 'class="form-control"';}?> placeholder="172.20.191.191" id="bgpipv4" name="bgpipv4" value="<?php echo $bgpipv4;?>">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                   <label class="col-form-label">IPv6 BGP Endpoint</label>
-                                  <input type="text" <?php if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isValidIPv6($bgpipv6)) {echo 'class="form-control is-invalid"';}else{echo 'class="form-control"';}?> placeholder="fe80::780" id="bgpipv6" name="bgpipv6" value="<?php echo $bgpipv6;?>" required>
+                                  <input type="text" <?php if (($_SERVER['REQUEST_METHOD'] == 'POST') && (!isValidIPv6($bgpipv6) && !empty($bgpipv6))){echo 'class="form-control is-invalid"';}else{echo 'class="form-control"';}?> placeholder="fe80::780" id="bgpipv6" name="bgpipv6" value="<?php echo $bgpipv6;?>">
                             </div>
                         </div>
                 </div>
