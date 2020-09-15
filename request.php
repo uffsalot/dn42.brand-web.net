@@ -108,6 +108,8 @@
                     <dd>172.20.191.129</dd>
                     <dt>BGP Endpoint (IPv6)</dt>
                     <dd>fe80::780</dd>
+                    <dt>BGP Multiprotocol</dt>
+                    <dd>not yet</dd>
                     <dt>VPN Type</dt>
                     <dd>Wireguard (preferred), OpenVPN</dd>
                     <dt>Wireguard Port</dt>
