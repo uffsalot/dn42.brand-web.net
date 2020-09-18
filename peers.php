@@ -21,8 +21,8 @@
                         foreach($protocolsv4 as $peer){
                             if($peer['state'] == "up") {echo '<tr class="table-success">';}else{echo '<tr class="table-danger">';}
                             echo '<th scope="row">'.$peer['protocol'].'</th>';
-                            echo '<td>'.$peer['neighbor_as'].'</td>';
-                            echo '<td>'.$peer['state_changed'].'</td>';
+			    echo '<td><a href="https://explorer.burble.com/#/aut-num/AS'.$peer['neighbor_as'].'">'.$peer['neighbor_as'].'</a></td>';
+			    echo '<td>'.$peer['state_changed'].'</td>';
                             echo '<td>'.$peer['state'].'</td>';
                             echo '<td>'.$peer['connection'].'</td></tr>';
                         }
