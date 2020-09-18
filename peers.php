@@ -7,7 +7,8 @@
             <div class="card-body">
                 <table class="table table-hover">
                     <thead>
-                        <tr>
+			<tr>
+			<th scope="col" style="width: 0.133333%;">&nbsp;</th>
                         <th scope="col">Name</th>
                         <th scope="col">AS</th>
                         <th scope="col">Last state changed</th>
@@ -19,8 +20,8 @@
                     <?php require_once("inc/get_peers.php"); 
                     if($resultv4){
                         foreach($protocolsv4 as $peer){
-                            if($peer['state'] == "up") {echo '<tr class="table-success">';}else{echo '<tr class="table-danger">';}
-                            echo '<th scope="row">'.$peer['protocol'].'</th>';
+                            if($peer['state'] == "up") {echo '<td class="table-success">';}else{echo '<td class="table-danger">';}
+                            echo '<td scope="row">'.$peer['protocol'].'</td>';
 			    echo '<td><a href="https://explorer.burble.com/#/aut-num/AS'.$peer['neighbor_as'].'">'.$peer['neighbor_as'].'</a></td>';
 			    echo '<td>'.$peer['state_changed'].'</td>';
                             echo '<td>'.$peer['state'].'</td>';
@@ -40,7 +41,8 @@
             <div class="card-body">
                 <table class="table table-hover">
                     <thead>
-                        <tr>
+			<tr>
+			<th scope="col" style="width: 0.133333%;">&nbsp;</th>
                         <th scope="col">Name</th>
                         <th scope="col">AS</th>
                         <th scope="col">Last state changed</th>
@@ -52,9 +54,10 @@
                     <?php require_once("inc/get_peers.php"); 
                     if($resultv6){
                         foreach($protocolsv6 as $peer){
-                            if($peer['state'] == "up") {echo '<tr class="table-success">';}else{echo '<tr class="table-danger">';}
-                            echo '<th scope="row">'.$peer['protocol'].'</th>';
-                            echo '<td>'.$peer['neighbor_as'].'</td>';
+    			    echo '<tr>';
+   			    if($peer['state'] == "up") {echo '<td class="table-success">';}else{echo '<tr class="table-danger">';}
+                            echo '<td scope="row">'.$peer['protocol'].'</td>';
+			    echo '<td><a href="https://explorer.burble.com/#/aut-num/AS'.$peer['neighbor_as'].'">'.$peer['neighbor_as'].'</a></td>';
                             echo '<td>'.$peer['state_changed'].'</td>';
                             echo '<td>'.$peer['state'].'</td>';
                             echo '<td>'.$peer['connection'].'</td></tr>';
