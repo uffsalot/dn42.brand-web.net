@@ -21,8 +21,8 @@
                     if($resultv4){
                         foreach($protocolsv4 as $peer){
     			    echo '<tr>';
-			    if($peer['state'] == "up") {echo '<th class="table-success"></th>';}else{echo '<th class="table-danger"></th>';}
-                            echo '<td scope="row">'.$peer['protocol'].'</td>';
+			    if($peer['state'] == "up") {echo '<td class="table-success"></td>';}else{echo '<td class="table-danger"></td>';}
+                            echo '<th scope="row">'.$peer['protocol'].'</th>';
 			    echo '<td><a href="https://explorer.burble.com/#/aut-num/AS'.$peer['neighbor_as'].'">'.$peer['neighbor_as'].'</a></td>';
 			    echo '<td>'.$peer['state_changed'].'</td>';
                             echo '<td>'.$peer['state'].'</td>';
@@ -56,8 +56,8 @@
                     if($resultv6){
                         foreach($protocolsv6 as $peer){
     			    echo '<tr>';
-   			    if($peer['state'] == "up") {echo '<th class="table-success"></th>';}else{echo '<th class="table-danger"></th>';}
-                            echo '<td scope="row">'.$peer['protocol'].'</td>';
+   			    if($peer['state'] == "up") {echo '<td class="table-success"></th>';}else{echo '<td class="table-danger"></th>';}
+                            echo '<th scope="row">'.$peer['protocol'].'</th>';
 			    echo '<td><a href="https://explorer.burble.com/#/aut-num/AS'.$peer['neighbor_as'].'">'.$peer['neighbor_as'].'</a></td>';
                             echo '<td>'.$peer['state_changed'].'</td>';
                             echo '<td>'.$peer['state'].'</td>';
