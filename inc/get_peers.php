@@ -11,6 +11,7 @@ curl_close($ch);
 if($resultv4){
     
     $json = json_decode($resultv4, true);
+    $cached_at = $json['api']['cache_status']['cached_at']['date'];
     $protocolsv4 = $json['protocols'];
     $protocolsv4 = array_filter($protocolsv4, function ($var) {
         return ($var['bird_protocol'] == 'BGP');
@@ -28,6 +29,7 @@ $resultv6=curl_exec($ch);
 curl_close($ch);
 if($resultv6){
     $json = json_decode($resultv6, true);
+    $cached_at = $json['api']['cache_status']['cached_at']['date'];
     $protocolsv6 = $json['protocols'];
     $protocolsv6 = array_filter($protocolsv6, function ($var) {
         return ($var['bird_protocol'] == 'BGP');

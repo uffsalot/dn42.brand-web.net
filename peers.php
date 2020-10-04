@@ -37,6 +37,7 @@
                 </tbody> 
             </table> 
             </div>
+            <div class="card-footer text-muted"><?php echo "Cached at".$cached_at;?></div>
         </div>
         </div>
         <div class="col-md-6">
@@ -74,6 +75,7 @@
                 </tbody> 
             </table> 
             </div>
+            <div class="card-footer text-muted"><?php echo "Cached at".$cached_at;?></div>
         </div>
         </div>
     </div>
