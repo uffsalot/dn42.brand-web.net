@@ -7,8 +7,8 @@
             <div class="card-body">
                 <table class="table table-hover">
                     <thead>
-			<tr>
-			<th scope="col" style="width: 0.133333%;">&nbsp;</th>
+            <tr>
+            <th scope="col" style="width: 0.133333%;">&nbsp;</th>
                         <th scope="col">Name</th>
                         <th scope="col">AS</th>
                         <th scope="col">Last state changed</th>
@@ -20,17 +20,20 @@
                     <?php require_once("inc/get_peers.php"); 
                     if($resultv6){
                         foreach($protocolsv6 as $peer){
-    			    echo '<tr>';
-   			    if($peer['state'] == "up") {echo '<td class="table-success"></th>';}else{echo '<td class="table-danger"></th>';}
+                            $dateraw = strtotime($peer['state_changed']);
+                            if((time()-(60*60*24)) < $dateraw) {$date = $peer['state_changed'];}else{$date = date('Y-m-d',$dateraw);}
+                            echo '<tr>';
+                                if($peer['state'] == "up") {echo '<td class="table-success"></th>';}else{echo '<td class="table-danger"></th>';}
                             echo '<th scope="row">'.$peer['protocol'].'</th>';
-			    echo '<td><a href="https://explorer.burble.com/#/aut-num/AS'.$peer['neighbor_as'].'">'.$peer['neighbor_as'].'</a></td>';
-                            echo '<td>'.$peer['state_changed'].'</td>';
+                            echo '<td><a href="https://explorer.burble.com/#/aut-num/AS'.$peer['neighbor_as'].'">'.$peer['neighbor_as'].'</a></td>';
+                            echo '<td>'.$date.'</td>';
                             echo '<td>'.$peer['state'].'</td>';
                             echo '<td>'.$peer['connection'].'</td></tr>';
                         }
                     } else {
-                        echo "Birdwatcher currently not available";}
-                        ?>
+                        echo "Birdwatcher currently not available";
+                    }
+                    ?>
                 </tbody> 
             </table> 
             </div>
@@ -42,8 +45,8 @@
             <div class="card-body">
                 <table class="table table-hover">
                     <thead>
-			<tr>
-			<th scope="col" style="width: 0.133333%;">&nbsp;</th>
+            <tr>
+            <th scope="col" style="width: 0.133333%;">&nbsp;</th>
                         <th scope="col">Name</th>
                         <th scope="col">AS</th>
                         <th scope="col">Last state changed</th>
@@ -55,11 +58,13 @@
                     <?php require_once("inc/get_peers.php"); 
                     if($resultv4){
                         foreach($protocolsv4 as $peer){
-    			    echo '<tr>';
-			    if($peer['state'] == "up") {echo '<td class="table-success"></td>';}else{echo '<td class="table-danger"></td>';}
+                            $dateraw = strtotime($peer['state_changed']);
+                            if((time()-(60*60*24)) < $dateraw) {$date = $peer['state_changed'];}else{$date = date('Y-m-d',$dateraw);}
+                            echo '<tr>';
+                            if($peer['state'] == "up") {echo '<td class="table-success"></td>';}else{echo '<td class="table-danger"></td>';}
                             echo '<th scope="row">'.$peer['protocol'].'</th>';
-			    echo '<td><a href="https://explorer.burble.com/#/aut-num/AS'.$peer['neighbor_as'].'">'.$peer['neighbor_as'].'</a></td>';
-			    echo '<td>'.$peer['state_changed'].'</td>';
+                            echo '<td><a href="https://explorer.burble.com/#/aut-num/AS'.$peer['neighbor_as'].'">'.$peer['neighbor_as'].'</a></td>';
+                            echo '<td>'.$date.'</td>';
                             echo '<td>'.$peer['state'].'</td>';
                             echo '<td>'.$peer['connection'].'</td></tr>';
                         }
