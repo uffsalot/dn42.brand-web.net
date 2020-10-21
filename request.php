@@ -102,7 +102,7 @@
                     <dt>Bandwith</dt>
                     <dd>1 Gbps</dd>
                     <dt>Remote (IPv4/IPv6)</dt>
-                    <dd>router.fra4.dn42.brand-web.net</dd>
+                    <dd>dn42-de-fra4.brand-web.net</dd>
                     <dt>AS</dt>
                     <dd>4242420780</dd>
                     <dt>BGP Endpoint (IPv4)</dt>
