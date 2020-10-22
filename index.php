@@ -6,6 +6,8 @@
             <div class="card-header">Contact</div>
             <div class="card-body">
                 <dl>
+                    <dt>Website</dt>
+                    <dd><a href="https://brand-web.net">brand-web.net</a></dd>
                     <dt>E-Mail</dt>
                     <dd>dn42@brand-web.net</dd>
                     <dt>IRC</dt>
