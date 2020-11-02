@@ -20,6 +20,9 @@ $myself = basename(test_input($_SERVER["SCRIPT_FILENAME"]), '.php');
       <li class="nav-item <?php if($myself == "index"){ echo 'active';}?>">
         <a class="nav-link" href="/">Home</a>
       </li>
+      <li class="nav-item <?php if($myself == "services"){ echo 'active';}?>">
+        <a class="nav-link" href="services.php">Services</a>
+      </li>
       <li class="nav-item <?php if($myself == "peers"){ echo 'active';}?>">
         <a class="nav-link" href="peers.php">Peers</a>
       </li>
