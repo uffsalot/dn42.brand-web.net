@@ -66,8 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         #            'X-Mailer: PHP/' . phpversion();
         #mail("dn42@brand-web.net", $subject, $message, $header);
         
-        $headers = array ('From' => $from,
-          'To' => $to,
+        $headers = array ('To' => $to,
           'From' => $username,
           'Subject' => $subject,
           'Reply-To' => $mail
