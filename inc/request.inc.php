@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'auth' => true,
             'username' => $username,
             'password' => $password));
-        $mail = $smtp->send($to, $headers, $message);
+        $sendmail = $smtp->send($to, $headers, $message);
     }
 }
 
