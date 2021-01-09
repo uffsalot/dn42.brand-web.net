@@ -10,7 +10,7 @@
 			<p class="mb-0">Error! Please check your input.</p>';
 			if(empty($bgpipv4) && empty($bgpipv6)) { echo '<p class="mb-0">At least one BGP peer must be specified.</p>';}
                     echo '</div>';}
-            if ($_SERVER['REQUEST_METHOD'] == 'POST' && $isvalid == TRUE) {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST' && $sendmail == TRUE) {
               echo '<div class="alert alert-dismissible alert-success">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
                         <strong>Well done!</strong> Your peering request was sucessfully transmitted. I will contact you via E-Mail to further coordinate the peering.</a>
