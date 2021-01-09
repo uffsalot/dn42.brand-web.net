@@ -3,6 +3,10 @@ require_once("Mail.php");
 require_once("secrets.php");
 
 
+$subject = "Hi!";
+$body = "Hi,\n\nHow are you?";
+
+
 $name       = "";
 $asn        = "";
 $mail       = "";
@@ -27,8 +31,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $bgpipv4    = test_input($_POST["bgpipv4"]);
     $bgpipv6    = test_input($_POST["bgpipv6"]);
     $addinfo    = test_input($_POST["addinfo"]);
-    $bandwidth    = test_input($_POST["bandwidth"]);
-
+    $bandwidth  = test_input($_POST["bandwidth"]);
+    $date       = date('r', time());
+    $messageid  = '<' .time() .'-' . md5($username . $mail) . '@' . $_SERVER['SERVER_NAME'] . '>';
     /*echo $name;
     echo $asn;
     echo $mail;
@@ -58,11 +63,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if($isvalid){
         $subject = "New Peering request from $name";
         $message = "Name: $name \r\nASN: $asn \r\nWireguard key: $wgkey \r\nWireguard endpoint: $wgendpoint \r\nBandwidth: $bandwidth \r\nIPv4 BGP Endpoint: $bgpipv4 \r\nIPv6 BGP Endpoint: $bgpipv6 \r\nAdditional Info: $addinfo \r\n\r\n Ansible: --extra-vars='name=$name asn=$asn wgkey=$wgkey wgendpoint=$wgendpoint bgpipv4=$bgpipv4 bgpipv6=$bgpipv6 bandwidth=$bandwidth'";
+        #$header =   'Reply-To: '.$mail . "\r\n" .
+        #            'X-Mailer: PHP/' . phpversion();
+        #mail("dn42@brand-web.net", $subject, $message, $header);
         
         $headers = array ('To' => $to,
           'From' => $username,
           'Subject' => $subject,
-          'Reply-To' => $mail
+          'Reply-To' => $mail,
+          'Date'      => $date,
+          'Message-ID' => $messageid
           );
         $smtp = Mail::factory('smtp',
           array ('host' => $host,
