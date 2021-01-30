@@ -18,8 +18,6 @@
                     <dd><a href="https://telegram.me/uffsalot">@uffsalot</a></dd>
                     <dt>Threema</dt>
                     <dd><a href="https://threema.id/YZEDPM3N">YZEDPM3N</a></dd>
-                    <dt>Discord</dt>
-                    <dd>SirUffsALot#6775</dd>
                 </dl>
             </div>
         </div>
