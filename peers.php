@@ -29,13 +29,15 @@
                             echo '<td>'.$date.'</td>';
                             echo '<td>'.$peer['state'].'</td>';
                             echo '<td>'.$peer['connection'].'</td></tr>';
-                        }
+			}
+			echo 'Total IPv6 Peers:'.count($protocolsv6);
                     } else {
                         echo "Birdwatcher currently not available";
                     }
                     ?>
                 </tbody> 
-            </table> 
+	    </table> 
+            <?php if($resultv6){ echo 'Total IPv6 Peers: '.count($protocolsv6); } ?>
             </div>
             <div class="card-footer text-muted"><?php echo "Cached at ".$cached_at;?></div>
         </div>
@@ -73,7 +75,8 @@
                         echo "Birdwatcher currently not available";}
                         ?>
                 </tbody> 
-            </table> 
+	    </table>
+            <?php if($resultv4){ echo 'Total IPv4 Peers: '.count($protocolsv4); } ?> 
             </div>
             <div class="card-footer text-muted"><?php echo "Cached at ".$cached_at;?></div>
         </div>
