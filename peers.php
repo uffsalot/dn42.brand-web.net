@@ -30,7 +30,6 @@
                             echo '<td>'.$peer['state'].'</td>';
                             echo '<td>'.$peer['connection'].'</td></tr>';
 			}
-			echo 'Total IPv6 Peers:'.count($protocolsv6);
                     } else {
                         echo "Birdwatcher currently not available";
                     }
