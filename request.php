@@ -83,7 +83,7 @@
                         </div>
                 </div>
                 <div class="form-group">
-                    <label for="exampleTextarea">Additional Information</label>
+                    <label for="addinfo">Additional Information</label>
                     <textarea class="form-control" name="addinfo" id="addinfo" rows="3"><?php echo $addinfo;?></textarea>
                 </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
