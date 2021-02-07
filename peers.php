@@ -23,7 +23,7 @@
                             $dateraw = strtotime($peer['state_changed']);
                             if((time()-(60*60*24)) < $dateraw) {$date = $peer['state_changed'];}else{$date = date('Y-m-d',$dateraw);}
                             echo '<tr>';
-                                if($peer['state'] == "up") {echo '<td class="table-success"></th>';}else{echo '<td class="table-danger"></th>';}
+                                if($peer['state'] == "up") {echo '<td class="table-success"></td>';}else{echo '<td class="table-danger"></td>';}
                             echo '<th scope="row">'.$peer['protocol'].'</th>';
                             echo '<td><a href="https://explorer.burble.com/#/aut-num/AS'.$peer['neighbor_as'].'">'.$peer['neighbor_as'].'</a></td>';
                             echo '<td>'.$date.'</td>';
