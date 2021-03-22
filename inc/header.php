@@ -29,6 +29,9 @@ $myself = basename(test_input($_SERVER["SCRIPT_FILENAME"]), '.php');
       <li class="nav-item <?php if($myself == "request"){ echo 'active';}?>">
         <a class="nav-link" href="request.php">Request peering</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://brand-web.net">Blog</a>
+      </li>
     </ul>
   </div>
 </nav>
